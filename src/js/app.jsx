@@ -23,6 +23,7 @@ export default class App extends React.Component {
             <Summary />
           </div>
         </div>
+      <div className='hello'></div>
       </div>
     );
   }
