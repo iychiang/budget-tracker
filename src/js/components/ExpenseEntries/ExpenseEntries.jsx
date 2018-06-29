@@ -1,16 +1,40 @@
 import React from 'react';
 
+import {
+  updateExpenseDescription,
+  updateExpenseAmount,
+  addExpense
+} from './expenseActions';
+
 export default class ExpenseEntries extends React.Component {
   constructor(props) {
     super(props);
-    const defaultState = {
-      description: '',
-      amount: '',
-      lineItems: []
-    };
+   //bind these methods to context of components which will
+   //be called back by event emitters (which lose context)
+    this.handleDescriptionInput = this.handleDescriptionInput.bind(this);
+    this.handleAmountInput = this.handleAmountInput.bind(this);
+    this.handleAddExpense = this.handleAddExpense.bind(this);
+  }
+
+  handleDescriptionInput(e) {
+    const { dispatch } = this.props;
+    const { value } = e.target;
+    dispatch(updateExpenseDescription(value));
+  }
+
+  handleAmountInput(e) {
+    const { dispatch } = this.props;
+    const { value } = e.target;
+    dispatch(updateExpenseAmount(value));
+  }
+
+  handleAddExpense() {
+    const { description, amount, dispatch } = this.props;
+    dispatch(addExpense(description, amount));
   }
 
   render() {
+    const { description, amount, lineItems } = this.props;
     return (
       <div className='card border-danger mb-3'>
         <div className='card-header text-white bg-danger'>Expense Entries</div>

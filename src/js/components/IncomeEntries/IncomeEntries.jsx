@@ -8,7 +8,7 @@ export default class IncomeEntries extends React.Component {
   render() {
     return (
       <div className='card border-success mb-3'>
-        <div className='card-header text-white bg-success'>income Entries</div>
+        <div className='card-header text-white bg-success'>Income Entries</div>
         <div className='card-body'>
           <form>
             <div className='form-group'>
