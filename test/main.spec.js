@@ -25,6 +25,7 @@ describe('express', () => {
     nightmare
       .goto(url)
       .evaluate(() => document.querySelector('body').innerText)
+      .timeout(5000)
       .end()
       .then((text) => {
         expect(text).to.contain('Budget Tracker');
