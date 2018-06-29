@@ -59,10 +59,5 @@ export default class ExpenseEntries extends React.Component {
       </div>
     );
   }
-}
 
-export default function ExpenseReducer (state = defaultState, action) {
-  // the `state = defaultState` above is new ES6 syntax
-  // for defining a default value on a parameter
-  return state;
 }
