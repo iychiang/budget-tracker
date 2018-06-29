@@ -16,7 +16,8 @@ app.listen(8888);
 const url = 'http://localhost:8888';
 
 
-describe('express', () => {
+describe('express', function() {
+  this.timeout(6000)
   beforeEach(() => {
     nightmare = new Nightmare();
   });
@@ -25,7 +26,6 @@ describe('express', () => {
     nightmare
       .goto(url)
       .evaluate(() => document.querySelector('body').innerText)
-      .timeout(5000)
       .end()
       .then((text) => {
         expect(text).to.contain('Budget Tracker');
