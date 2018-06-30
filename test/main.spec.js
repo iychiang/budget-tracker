@@ -21,9 +21,8 @@ describe('express', function() {
 
   it('should have the correct page title', (done) => {
     let nightmare = new Nightmare();
-    console.log('nightmare');
-    nightmare
-      .goto(url)
+    console.log('nightmare', nightmare);
+    nightmare.goto(url)
       .evaluate(() => document.getElementById('title').innerText)
       .end()
       .then((text) => {
