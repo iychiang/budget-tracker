@@ -28,6 +28,7 @@ describe('express', function() {
       .evaluate(() => document.querySelector('body').innerText)
       .end()
       .then((text) => {
+        console.log('hello i am here circleci pls')
         expect(text).to.contain('Budget Tracker');
         done();
       })
