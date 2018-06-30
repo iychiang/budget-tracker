@@ -29,10 +29,10 @@ describe('express', function() {
       .then((text) => {
         console.log('hello i am here circleci pls')
         expect(text).to.contain('Budget Tracker');
+        done();
       })
       .catch((err) => {
-        console.log(err);
-        done();
+        console.log(err); 
       })
     }
   );
