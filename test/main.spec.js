@@ -21,15 +21,17 @@ describe('express', function() {
 
   it('should have the correct page title', (done) => {
     let nightmare = new Nightmare();
-    console.log('nightmare', nightmare);
-    nightmare.goto(url)
+    console.log('nightmare', url);
+    nightmare
+      .goto(url)
       .evaluate(() => document.getElementById('title').innerText)
       .end()
       .then((text) => {
         console.log('hello i am here circleci pls')
         expect(text).to.contain('Budget Tracker');
-        done();
       })
+      .catch((err) => console.log(err))
+      .finally(done);
     }
   );
 
