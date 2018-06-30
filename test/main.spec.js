@@ -30,8 +30,10 @@ describe('express', function() {
         console.log('hello i am here circleci pls')
         expect(text).to.contain('Budget Tracker');
       })
-      .catch((err) => console.log(err))
-      .finally(done);
+      .catch((err) => {
+        console.log(err);
+        done();
+      })
     }
   );
 
