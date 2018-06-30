@@ -17,12 +17,13 @@ const url = 'http://localhost:8888';
 
 
 describe('express', function() {
-  this.timeout(30000)
+  this.timeout(20000)
   beforeEach(() => {
     nightmare = new Nightmare();
   });
 
-  it('should have the correct page title', () =>
+  it('should have the correct page title', (done) => {
+    let nightmare = new Nightmare();
     nightmare
       .goto(url)
       .evaluate(() => document.querySelector('body').innerText)
@@ -32,6 +33,7 @@ describe('express', function() {
         expect(text).to.contain('Budget Tracker');
         done();
       })
+    }
   );
 
   it('returns the correct status code', () => axios.get(url)
