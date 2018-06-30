@@ -18,15 +18,13 @@ const url = 'http://localhost:8888';
 
 describe('express', function() {
   this.timeout(20000)
-  beforeEach(() => {
-    nightmare = new Nightmare();
-  });
 
   it('should have the correct page title', (done) => {
     let nightmare = new Nightmare();
+    console.log('nightmare');
     nightmare
       .goto(url)
-      .evaluate(() => document.querySelector('body').innerText)
+      .evaluate(() => document.getElementById('title').innerText)
       .end()
       .then((text) => {
         console.log('hello i am here circleci pls')
