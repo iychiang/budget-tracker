@@ -5,7 +5,7 @@ function mapStoreToProps(store) {
   return {
     description: store.income.description,
     amount: store.income.amount,
-    lineItems: store.expense.lineItems
+    lineItems: store.income.lineItems
   };
 }
 
