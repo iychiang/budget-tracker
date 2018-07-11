@@ -6,7 +6,7 @@ import Summary from './components/Summary';
 export default class App extends React.Component {
   render() {
     return (
-      <div className='container'>
+      <div className='container hello'>
         <div className='jumbotron' >
           <h1 id="title" className='display-3 text-center'>Budget Tracker</h1>
         </div>
